@@ -1,0 +1,21 @@
++--------+-----------+----------------------------------+-------------------+-----------------------------------------------------------------------------+--------------+
+| Domain | Method    | URI                              | Name              | Action                                                                      | Middleware   |
++--------+-----------+----------------------------------+-------------------+-----------------------------------------------------------------------------+--------------+
+|        | POST      | admin/dashboard                  | dashboard.store   | App\Http\Controllers\Back\DashboardController@store                         | web          |
+|        | GET|HEAD  | admin/dashboard                  | dashboard.index   | App\Http\Controllers\Back\DashboardController@index                         | web          |
+|        | GET|HEAD  | admin/dashboard/create           | dashboard.create  | App\Http\Controllers\Back\DashboardController@create                        | web          |
+|        | DELETE    | admin/dashboard/{dashboard}      | dashboard.destroy | App\Http\Controllers\Back\DashboardController@destroy                       | web          |
+|        | GET|HEAD  | admin/dashboard/{dashboard}      | dashboard.show    | App\Http\Controllers\Back\DashboardController@show                          | web          |
+|        | PUT|PATCH | admin/dashboard/{dashboard}      | dashboard.update  | App\Http\Controllers\Back\DashboardController@update                        | web          |
+|        | GET|HEAD  | admin/dashboard/{dashboard}/edit | dashboard.edit    | App\Http\Controllers\Back\DashboardController@edit                          | web          |
+|        | POST      | admin/login                      |                   | App\Http\Controllers\Back\Auth\LoginController@login                        | web,guest    |
+|        | GET|HEAD  | admin/login                      | login             | App\Http\Controllers\Back\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST      | admin/logout                     | logout            | App\Http\Controllers\Back\Auth\LoginController@logout                       | web          |
+|        | POST      | admin/password/email             |                   | App\Http\Controllers\Back\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
+|        | GET|HEAD  | admin/password/reset             |                   | App\Http\Controllers\Back\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
+|        | POST      | admin/password/reset             |                   | App\Http\Controllers\Back\Auth\ResetPasswordController@reset                | web,guest    |
+|        | GET|HEAD  | admin/password/reset/{token}     |                   | App\Http\Controllers\Back\Auth\ResetPasswordController@showResetForm        | web,guest    |
+|        | POST      | admin/register                   |                   | App\Http\Controllers\Back\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD  | admin/register                   | register          | App\Http\Controllers\Back\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | GET|HEAD  | api/user                         |                   | Closure                                                                     | api,auth:api |
++--------+-----------+----------------------------------+-------------------+-----------------------------------------------------------------------------+--------------+
