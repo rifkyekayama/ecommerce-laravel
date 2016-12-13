@@ -34,31 +34,31 @@
 <section id="wrapper" class="login-register">
   <div class="login-box">
     <div class="white-box">
-      {!! Form::open(['url' => 'admin/password/email', 'id' => 'loginform', 'class' => 'form-horizontal']) !!}
-				<div class="form-group ">
-					<div class="col-xs-12">
-						<h3>Recover Password</h3>
-						<p class="text-muted">Enter your Email and instructions will be sent to you! </p>
-						@if (session('status'))
-							<div class="alert alert-success"> {{ session('status') }} </div>
-						@endif
-					</div>
+    	{!! Form::open(['url' => 'admin/password/email', 'id' => 'loginform', 'class' => 'form-horizontal']) !!}
+			<div class="form-group ">
+				<div class="col-xs-12">
+					<h3>Recover Password</h3>
+					<p class="text-muted">Enter your Email and instructions will be sent to you! </p>
+					@if (session('status'))
+						<div class="alert alert-success"> {{ session('status') }} </div>
+					@endif
 				</div>
-				<div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
-					<div class="col-xs-12">
-						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
-						@if($errors->has('email'))
-							<span class="help-block"><small>{{ $errors->first('email') }}</small></span>
-							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
-						@endif
-					</div>
+			</div>
+			<div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
+				<div class="col-xs-12">
+					{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+					@if($errors->has('email'))
+						<span class="help-block"><small>{{ $errors->first('email') }}</small></span>
+						<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					@endif
 				</div>
-				<div class="form-group text-center m-t-20">
-					<div class="col-xs-12">
-						<button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
-					</div>
+			</div>
+			<div class="form-group text-center m-t-20">
+				<div class="col-xs-12">
+					<button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
 				</div>
-			{!! Form::close() !!}
+			</div>
+		{!! Form::close() !!}
     </div>
   </div>
 </section>

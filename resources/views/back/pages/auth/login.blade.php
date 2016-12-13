@@ -42,14 +42,22 @@
 						@endif
 					</div>
 				</div>
-				<div class="form-group ">
+				<div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
 					<div class="col-xs-12">
 						{!!  Form::text('email', old('email'), ['class' => 'form-control', 'placeholder' => 'Email']) !!}
+						@if($errors->has('email'))
+							<span class="help-block"><small>{{ $errors->first('email') }}</small></span>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						@endif
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group {{ $errors->has('password') ? 'has-error has-feedback' : '' }}">
 					<div class="col-xs-12">
 						{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password']) !!}
+						@if($errors->has('password'))
+							<span class="help-block"><small>{{ $errors->first('password') }}</small></span>
+							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+						@endif
 					</div>
 				</div>
 				<div class="form-group">
@@ -73,32 +81,6 @@
 				<div class="form-group m-b-0">
 					<div class="col-sm-12 text-center">
 						<p>Don't have an account? <a href="register.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
-					</div>
-				</div>
-			{!! Form::close() !!}
-
-			{!! Form::open(['url' => 'admin/password/email', 'id' => 'recoverform', 'class' => 'form-horizontal']) !!}
-				<div class="form-group ">
-					<div class="col-xs-12">
-						<h3>Recover Password</h3>
-						<p class="text-muted">Enter your Email and instructions will be sent to you! </p>
-						@if (session('status'))
-							<div class="alert alert-danger"> {{ session('status') }} </div>
-						@endif
-					</div>
-				</div>
-				<div class="form-group {{ $errors->has('email') ? 'has-error has-feedback' : '' }}">
-					<div class="col-xs-12">
-						{!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'Email']) !!}
-						@if($errors->has('email'))
-							<span class="help-block"><small>{{ $errors->first('email') }}</small></span>
-							<span class="glyphicon glyphicon-remove form-control-feedback"></span>
-						@endif
-					</div>
-				</div>
-				<div class="form-group text-center m-t-20">
-					<div class="col-xs-12">
-						<button class="btn btn-primary btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Reset</button>
 					</div>
 				</div>
 			{!! Form::close() !!}

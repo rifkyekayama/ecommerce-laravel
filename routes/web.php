@@ -11,10 +11,14 @@
 |
 */
 
-Route::group(['namespace' => 'Back', 'prefix' => 'admin'], function(){
+Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], function(){
 	
 	Route::auth();
 
 	Route::resource('dashboard', 'DashboardController');
+
+	Route::resource('profile', 'Profile\ProfileController');
+
+	Route::resource('kelola-admin', 'Admin\AdminController');
 
 });

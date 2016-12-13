@@ -12,6 +12,7 @@
 <title>Elite Admin - is a responsive admin template</title>
 <!-- Bootstrap Core CSS -->
 <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+@yield('css')
 <!-- Menu CSS -->
 <link href="{{ asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}" rel="stylesheet">
 <!-- toast CSS -->
@@ -24,6 +25,8 @@
 <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <!-- color CSS -->
 <link href="{{ asset('css/colors/default.css') }}" id="theme"  rel="stylesheet">
+<!--alerts CSS -->
+<link href="{{ asset('plugins/bower_components/sweetalert/sweetalert.css') }}" rel="stylesheet" type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -79,6 +82,9 @@
 <!--Morris JavaScript -->
 <script src="{{ asset('plugins/bower_components/raphael/raphael-min.js') }}"></script>
 <script src="{{ asset('plugins/bower_components/morrisjs/morris.js') }}"></script>
+<!-- Sweet-Alert  -->
+<script src="{{ asset('plugins/bower_components/sweetalert/sweetalert.min.js') }}"></script>
+<script src="{{ asset('plugins/bower_components/sweetalert/jquery.sweet-alert.custom.js') }}"></script>
 <!-- Custom Theme JavaScript -->
 <script src="{{ asset('js/custom.min.js') }}"></script>
 <!-- Sparkline chart JavaScript -->
@@ -88,6 +94,8 @@
 <!-- Sparkline chart JavaScript -->
 <script src="{{ asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
 <script src="{{ asset('plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js') }}"></script>
+
+@yield('js')
 
 <!--Style Switcher -->
 <script src="{{ asset('plugins/bower_components/styleswitcher/jQuery.style.switcher.js') }}"></script>
