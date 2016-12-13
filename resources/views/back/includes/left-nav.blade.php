@@ -11,7 +11,7 @@
 							<li role="separator" class="divider"></li>
 							<li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
 							<li role="separator" class="divider"></li>
-							<li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
+							<li><a href="#" onclick="document.getElementById('logout').submit()"><i class="fa fa-power-off"></i> Logout</a></li>
 						</ul>
 			</div>
 		</div>
@@ -40,7 +40,9 @@
 					<li> <a href="product-checkout.html">Product Checkout</a> </li>
 				</ul>
 			</li>
-			<li><a href="login.html" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+			<li><a href="#" onclick="document.getElementById('logout').submit()" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
 		</ul>
 	</div>
 </div>
+{!! Form::open(['url' => 'admin/logout', 'method' => 'post', 'id' => 'logout']) !!}
+{!! Form::close() !!}

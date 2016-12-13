@@ -19,5 +19,12 @@ class AdminUserSeeder extends Seeder
 				'password' => bcrypt('admin'),
 				'remember_token' => str_random(10),
 			]);
+
+		$user = User::create([
+				'name' => 'Rifky Ekayama',
+				'email' => 'rifky.ekayama@admin.com',
+				'password' => bcrypt('admin'),
+				'remember_token' => str_random(10),
+			]);
 	}
 }
