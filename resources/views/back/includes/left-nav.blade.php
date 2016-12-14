@@ -29,15 +29,12 @@
 			<li><div class="hide-menu t-earning"><div id="sparkline2dash" class="m-b-10"></div><small class="db">TOTAL EARNINGS - JUNE 2016</small><h3 class="m-t-0 m-b-0">$2,478.00</h3></div>
 			</li>
 			<li class="nav-small-cap m-t-10">--- Main Menu</li>
-			<li> <a href="index.html" class="waves-effect active"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> E-commerce <span class="fa arrow"></span> <span class="label label-rouded label-custom pull-right">7</span></span></a>
+			<li><a href="{{ route('admin.dashboard.index') }}" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="a"></i> <span class="hide-menu">Dashboard</span></a></li>
+			<li> <a href="index.html" class="waves-effect"><i class="linea-icon linea-basic fa-fw" data-icon="v"></i> <span class="hide-menu"> E-commerce <span class="fa arrow"></span></span></a>
 				<ul class="nav nav-second-level">
-					<li> <a href="index.html">Dashboard</a> </li>
-					<li> <a href="products.html">Products</a> </li>
-					<li> <a href="product-detail.html">Product Detail</a> </li>
-					<li> <a href="product-edit.html">Product Edit</a> </li>
-					<li> <a href="product-orders.html">Product Orders</a> </li>
-					<li> <a href="product-cart.html">Product Cart</a> </li>
-					<li> <a href="product-checkout.html">Product Checkout</a> </li>
+					<li> <a href="products.html">Kelola Brand</a> </li>
+					<li> <a href="product-detail.html">Kelola Kategori</a> </li>
+					<li> <a href="product-edit.html">Kelola Produk</a> </li>
 				</ul>
 			</li>
 			<li><a href="{{ route('admin.kelola-admin.index') }}" class="waves-effect"><i class="icon-user fa-fw"></i> <span class="hide-menu">Kelola Admin</span></a></li>

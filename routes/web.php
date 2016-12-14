@@ -21,4 +21,8 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], fun
 
 	Route::resource('kelola-admin', 'Admin\AdminController');
 
+	Route::resource('brands', 'Brand\BrandsController');
+
+	Route::resource('products', 'Product\ProductsController');
+
 });

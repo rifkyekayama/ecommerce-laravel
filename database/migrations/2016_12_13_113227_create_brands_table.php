@@ -17,9 +17,13 @@ class CreateBrandsTable extends Migration
             $table->increments('id');
             $table->string('photo');
             $table->string('name');
-            $table->string('address');
+            $table->unsignedInteger('province_id');
+            $table->unsignedInteger('city_id');
+            $table->unsignedInteger('subdistrict_id');
+            $table->text('address');
+            $table->string('postal_code', 5);
             $table->string('phone');
-            $table->string('contact-name');
+            $table->string('contact_name');
             $table->timestamps();
         });
     }

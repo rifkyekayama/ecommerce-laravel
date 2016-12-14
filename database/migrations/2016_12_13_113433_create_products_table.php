@@ -17,17 +17,16 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('brands_id');
             $table->unsignedInteger('category_id');
-            $table->string('photo');
             $table->string('name');
-            $table->string('sub-text');
-            $table->enum('status', ['publshed', 'draft']);
+            $table->string('sub_text');
+            $table->enum('status', ['published', 'draft']);
             $table->text('desc');
             $table->integer('stock');
-            $table->integer('original-price');
+            $table->integer('original_price');
             $table->integer('price');
             $table->integer('discount');
-            $table->string('meta-title');
-            $table->string('meta-keyword');
+            $table->string('meta_title');
+            $table->string('meta_keyword');
             $table->timestamps();
         });
     }
