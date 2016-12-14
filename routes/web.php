@@ -25,4 +25,6 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], fun
 
 	Route::resource('products', 'Product\ProductsController');
 
+	Route::resource('categories', 'Category\CategoriesController');
+
 });
