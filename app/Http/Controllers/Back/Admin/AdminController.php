@@ -18,7 +18,7 @@ class AdminController extends Controller
 	{
 		//
 		$users = User::orderBy('id', 'desc')->get();
-		return view('back.pages.admin.index', compact('users'));
+		return view('back.pages.admin.index', compact('users'))->withTitle('Kelola Admin');
 	}
 
 	/**
@@ -29,7 +29,7 @@ class AdminController extends Controller
 	public function create()
 	{
 		//
-		return view('back.pages.admin.create');
+		return view('back.pages.admin.create')->withTitle('Tambah Admin');
 	}
 
 	/**
@@ -60,7 +60,7 @@ class AdminController extends Controller
 	{
 		//
 		$user = User::find(decrypt($id));
-		return view('back.pages.admin.show', compact('user'));
+		return view('back.pages.admin.show', compact('user'))->withTitle('Lihat Admin');
 	}
 
 	/**
@@ -73,7 +73,7 @@ class AdminController extends Controller
 	{
 		//
 		$user = User::find(decrypt($id));
-		return view('back.pages.admin.edit', compact('user'));
+		return view('back.pages.admin.edit', compact('user'))->withTitle('Ubah Admin');
 	}
 
 	/**

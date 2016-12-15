@@ -22,6 +22,8 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], fun
 	Route::resource('kelola-admin', 'Admin\AdminController');
 
 	Route::resource('brands', 'Brand\BrandsController');
+	Route::get('brands/city/{name}/{province_id}', 'Brand\BrandsController@city')->name('admin.brands.city');
+	Route::get('brands/subdistrict/{name}/{province_id}/{city_id}', 'Brand\BrandsController@subdistrict')->name('admin.brands.subdistrict');
 
 	Route::resource('products', 'Product\ProductsController');
 

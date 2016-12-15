@@ -15,7 +15,7 @@ class ProfileController extends Controller
     public function index()
     {
         //
-        return view('back.pages.profile.index');
+        return view('back.pages.profile.index')->withTitle('Profile');
     }
 
     /**

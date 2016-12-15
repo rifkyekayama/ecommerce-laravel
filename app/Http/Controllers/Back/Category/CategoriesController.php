@@ -17,7 +17,7 @@ class CategoriesController extends Controller
 	{
 		//
 		$categories = Category::orderBy('created_at', 'desc')->get();
-		return view('back.pages.category.index', compact('categories'));
+		return view('back.pages.category.index', compact('categories'))->withTitle('Kelola Kategori');
 	}
 
 	/**
@@ -28,7 +28,7 @@ class CategoriesController extends Controller
 	public function create()
 	{
 		//
-		return view('back.pages.category.create');
+		return view('back.pages.category.create')->withTitle('Tambah Kategori');
 	}
 
 	/**
@@ -59,7 +59,7 @@ class CategoriesController extends Controller
 	{
 		//
 		$category = Category::find(decrypt($id));
-		return view('back.pages.category.show', compact('category'));
+		return view('back.pages.category.show', compact('category'))->withTitle('Lihat Kategori');
 	}
 
 	/**
@@ -72,7 +72,7 @@ class CategoriesController extends Controller
 	{
 		//
 		$category = Category::find(decrypt($id));
-		return view('back.pages.category.edit', compact('category'));
+		return view('back.pages.category.edit', compact('category'))->withTitle('Ubah Kategori');
 	}
 
 	/**

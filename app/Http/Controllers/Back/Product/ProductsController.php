@@ -17,7 +17,7 @@ class ProductsController extends Controller
 	{
 		//
 		$products = Product::orderBy('created_at', 'desc')->get();
-		return view('back.pages.product.index', compact('products'));
+		return view('back.pages.product.index', compact('products'))->withTitle('Kelola Produk');
 	}
 
 	/**
@@ -28,7 +28,7 @@ class ProductsController extends Controller
 	public function create()
 	{
 		//
-		return view('back.pages.product.create');
+		return view('back.pages.product.create')->withTitle('Tambah Produk');
 	}
 
 	/**
@@ -68,7 +68,7 @@ class ProductsController extends Controller
 	{
 		//
 		$product = Product::find(decrypt($id));
-		return view('back.pages.product.show', compact('product'));
+		return view('back.pages.product.show', compact('product'))->withTitle('Lihat Produk');
 	}
 
 	/**
@@ -82,7 +82,7 @@ class ProductsController extends Controller
 		//
 		$product = Product::find(decrypt($id));
 
-		return view('back.pages.product.edit', compact('product'));
+		return view('back.pages.product.edit', compact('product'))->withTitle('Ubah Produk');
 	}
 
 	/**

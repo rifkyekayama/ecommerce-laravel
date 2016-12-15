@@ -35,7 +35,7 @@ class Subdistrict extends Model
 
 	public function brands()
 	{
-		return $this->hasMany(Brand::class)
+		return $this->hasMany(Brand::class);
 	}
 
 	public function customerAddress()

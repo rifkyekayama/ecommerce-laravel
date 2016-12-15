@@ -17,6 +17,7 @@ class CreateBrandsTable extends Migration
             $table->increments('id');
             $table->string('photo');
             $table->string('name');
+            $table->string('email');
             $table->unsignedInteger('province_id');
             $table->unsignedInteger('city_id');
             $table->unsignedInteger('subdistrict_id');
