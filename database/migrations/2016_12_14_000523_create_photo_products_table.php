@@ -15,10 +15,13 @@ class CreatePhotoProductsTable extends Migration
     {
         Schema::create('photo_products', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('product_id');
-            $table->string('photo');
+            $table->unsignedInteger('product_id')->nullable();
+            $table->string('photo')->nullable();
             $table->enum('isPrimary', ['yes', 'no']);
+            $table->string('ipaddress', 15)->nullable();
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

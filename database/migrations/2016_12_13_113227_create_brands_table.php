@@ -15,16 +15,16 @@ class CreateBrandsTable extends Migration
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('photo');
-            $table->string('name');
-            $table->string('email');
-            $table->unsignedInteger('province_id');
-            $table->unsignedInteger('city_id');
-            $table->unsignedInteger('subdistrict_id');
-            $table->text('address');
-            $table->string('postal_code', 5);
-            $table->string('phone');
-            $table->string('contact_name');
+            $table->string('photo')->nullable();
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->unsignedInteger('province_id')->nullable();
+            $table->unsignedInteger('city_id')->nullable();
+            $table->unsignedInteger('subdistrict_id')->nullable();
+            $table->text('address')->nullable();
+            $table->string('postal_code', 5)->nullable();
+            $table->string('phone')->nullable();
+            $table->string('contact_name')->nullable();
             $table->timestamps();
         });
     }

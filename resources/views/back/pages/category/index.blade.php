@@ -15,9 +15,60 @@
 @endsection
 
 @section('content')
-	
+	<!-- /.row -->
+		<div class="row">
+			<div class="white-box">
+				<div class="table-responsive" id="table-container">
+					@include('back.pages.category._table')
+				</div>
+			</div>
+		</div>
+	<!--row -->
 @endsection
 
 @section('js')
 	<script src="{{ asset('plugins/bower_components/datatables/jquery.dataTables.min.js') }}"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#myTable').DataTable();
+			
+			$(document).on('click', '#delete', function(e){
+				e.preventDefault();
+				var id = $(this).attr('data-id');
+				swal({
+					title: "Anda yakin?",      
+					type: "warning",   
+					showCancelButton: true,   
+					confirmButtonColor: "#DD6B55",   
+					confirmButtonText: "Ya, Hapus",   
+					cancelButtonText: "Tidak, Batalkan",   
+					closeOnConfirm: false,   
+					closeOnCancel: false }, 
+					function(isConfirm){   
+					if (isConfirm) {     
+						$.ajax({
+							type: "DELETE",
+							url: "{{ url('admin/categories') }}"+"/"+id,
+							data: {_token: "{{ csrf_token() }}"},
+							cache: false,
+							success: function(data){
+								swal({
+									title: "Data Dihapus!",
+									type: "success"
+								}, function(){
+									//window.location.href = '{{ url()->current() }}';
+									$('#table-container').html(data);
+									$('#myTable').DataTable();
+								});
+							}
+						});
+					} else {
+						swal("Batal", "Hapus data dibatalkan", "error");   
+					} 
+				});
+			});
+		});
+	</script>
 @endsection

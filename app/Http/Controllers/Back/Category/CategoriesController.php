@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Back\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Category\Category;
+use App\Http\Requests\Back\Category\CategoryStore;
 
 class CategoriesController extends Controller
 {
@@ -37,7 +38,7 @@ class CategoriesController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(Request $request)
+	public function store(CategoryStore $request)
 	{
 		//
 		$category = new Category;
@@ -82,7 +83,7 @@ class CategoriesController extends Controller
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, $id)
+	public function update(CategoryStore $request, $id)
 	{
 		//
 		$category = Category::find(decrypt($id));
@@ -104,6 +105,6 @@ class CategoriesController extends Controller
 		//
 		$category = Category::find(decrypt($id))->delete();
 		$categories = Category::orderBy('created_at', 'desc')->get();
-		return view('back.pages.category.index', compact('categories'));
+		return view('back.pages.category._table', compact('categories'));
 	}
 }

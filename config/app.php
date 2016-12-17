@@ -169,6 +169,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         RifkyEkayama\RajaOngkir\RajaOngkirServiceProvider::class,
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
         //
 

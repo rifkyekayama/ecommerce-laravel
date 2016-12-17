@@ -31,6 +31,9 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+
+			$('#myTable').DataTable();
+			
 			$(document).on('click', '#delete', function(e){
 				e.preventDefault();
 				var id = $(this).attr('data-id');
@@ -57,6 +60,7 @@
 								}, function(){
 									//window.location.href = '{{ url()->current() }}';
 									$('#table-container').html(data);
+									$('#myTable').DataTable();
 								});
 							}
 						});

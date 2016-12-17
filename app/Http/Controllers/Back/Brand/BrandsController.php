@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Back\Brand;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Back\Brands\BrandStore;
 use App\Models\Brand\Brand;
 use App\Models\Address\Province;
 use App\Models\Address\City;
 use App\Models\Address\Subdistrict;
-use App\Http\Requests\Back\Brand\BrandStore;
 use Form;
 use Storage;
 
@@ -44,7 +44,7 @@ class BrandsController extends Controller
 	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(BrandStore $request)
+	public function store(Request $request)
 	{
 		//
 		Storage::makeDirectory('brands');

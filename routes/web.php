@@ -27,6 +27,16 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], fun
 
 	Route::resource('products', 'Product\ProductsController');
 
+	Route::resource('photos-product', 'Product\ProductPhotosController');
+	Route::delete('photos-product/delete-create/{id}', 'Product\ProductPhotosController@destroyCreate');
+	Route::delete('photos-product/delete-edit/{id}/{product_id}', 'Product\ProductPhotosController@destroyEdit');
+
 	Route::resource('categories', 'Category\CategoriesController');
 
+});
+
+Route::group(['namespace' => 'Back'], function(){
+	Route::get('/', function(){
+		return view('front.layouts.master');
+	});
 });
