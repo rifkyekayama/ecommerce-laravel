@@ -37,6 +37,6 @@ Route::group(['namespace' => 'Back', 'prefix' => 'admin', 'as' => 'admin.'], fun
 
 Route::group(['namespace' => 'Back'], function(){
 	Route::get('/', function(){
-		return view('front.layouts.master');
+		return view('front.pages.home.index');
 	});
 });
